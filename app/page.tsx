@@ -11,7 +11,7 @@ export default function Home() {
           </div>
 
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-[#2C3E50] mb-5 sm:mb-6 break-keep leading-tight">
-            안녕? 난 라이언 콩이야
+            안녕? 난 <span className="text-teal-600">라이언 콩</span>이야
           </h1>
 
           <div className="my-2 relative shrink-0">
