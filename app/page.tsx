@@ -13,6 +13,9 @@ export default function Home() {
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-[#2C3E50] mb-5 sm:mb-6 break-keep leading-tight">
             안녕? 난 <span className="text-teal-600">라이언 콩</span>이야
           </h1>
+          <p className="text-base sm:text-lg font-medium text-[#2C3E50]/80 -mt-2 mb-4 break-keep">
+            만나서 반가워!
+          </p>
 
           <div className="my-2 relative shrink-0">
             <Image
