@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-12 py-8 sm:py-16 md:py-24 bg-[#FDFBF7] text-[#2C3E50] overflow-x-hidden">
+    <main className="min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-12 py-8 sm:py-16 md:py-24 bg-[#FDFBF7] text-[#2C3E50] overflow-x-hidden relative">
       <div className="max-w-lg w-full rounded-3xl bg-white/90 backdrop-blur-md border border-[#2C3E50]/10 p-6 sm:p-10 md:p-12 shadow-xl shadow-[#2C3E50]/5 space-y-6 sm:space-y-8">
         <div className="flex flex-col items-center text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 mb-4 shrink-0">
@@ -33,7 +34,7 @@ export default function Home() {
           </p>
 
           <p className="text-sm sm:text-base text-[#2C3E50]/80 max-w-sm leading-relaxed break-keep">
-            가장 단순하고 깔끔한 Next.js 프로젝트가 준비되었습니다.
+            [라이언콩의 일상]
           </p>
         </div>
 
@@ -66,7 +67,28 @@ export default function Home() {
         <p className="text-center font-bold text-[#C84726] text-sm sm:text-base break-keep">
           [오늘 처음 인터넷에 사이트를 올렸어요!]
         </p>
+
+        <div className="pt-1">
+          <Link
+            href="/inquiry"
+            className="w-full flex items-center justify-center gap-2 py-3 px-5 rounded-2xl bg-teal-600 hover:bg-teal-700 active:scale-[0.99] text-white font-bold text-xs sm:text-sm shadow-md shadow-teal-600/20 transition-all duration-200 group cursor-pointer"
+          >
+            <span className="text-base group-hover:scale-110 transition-transform">💌</span>
+            <span>문의사항 남기기</span>
+            <span className="text-teal-200 group-hover:translate-x-0.5 transition-transform">→</span>
+          </Link>
+        </div>
       </div>
+
+      {/* Floating Inquiry Button */}
+      <Link
+        href="/inquiry"
+        title="문의사항 남기기"
+        className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 flex items-center gap-2 px-4 py-3 rounded-full bg-teal-600 hover:bg-teal-700 text-white shadow-xl shadow-teal-600/30 transition-all duration-200 hover:scale-105 active:scale-95 group cursor-pointer"
+      >
+        <span className="text-lg group-hover:rotate-12 transition-transform">💌</span>
+        <span className="text-xs sm:text-sm font-bold tracking-tight">문의사항</span>
+      </Link>
     </main>
   );
 }
