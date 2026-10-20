@@ -62,6 +62,10 @@ export default function Home() {
         <div className="text-xs text-[#2C3E50]/70 text-center pt-1 sm:pt-2 break-keep">
           수정하려면 <code className="bg-[#2C3E50]/10 px-1.5 py-0.5 rounded text-[#2C3E50] font-mono break-all inline-block">app/page.tsx</code> 파일을 열어보세요.
         </div>
+
+        <p className="text-center font-bold text-[#C84726] text-sm sm:text-base break-keep">
+          [오늘 처음 인터넷에 사이트를 올렸어요!]
+        </p>
       </div>
     </main>
   );
