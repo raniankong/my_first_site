@@ -13,8 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My First Site - Next.js",
-  description: "Next.js, TypeScript, Tailwind CSS로 만든 첫 번째 사이트",
+  metadataBase: new URL("https://my-first-site-rust-two.vercel.app"),
+  title: "안녕? 난 라이언 콩이야",
+  description: "[@ranian_kong]",
+  openGraph: {
+    title: "안녕? 난 라이언 콩이야",
+    description: "[@ranian_kong]",
+    images: ["/my-dog.jpg"],
+  },
   verification: {
     google: "GJ2E9p1WzJ2vS43FfH0AhgYN6JeRnL_7vgvujU5G4d4",
     other: {
