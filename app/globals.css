@@ -15,6 +15,7 @@
   /* 색상 이름 (bg-primary, text-ink, bg-accent, bg-surface 등으로 사용) */
   --color-primary: var(--brand-primary);
   --color-primary-hover: color-mix(in srgb, var(--brand-primary) 82%, black);
+  --color-primary-dark: color-mix(in srgb, var(--brand-primary) 55%, black);
   --color-accent: var(--brand-accent);
   --color-accent-hover: color-mix(in srgb, var(--brand-accent) 88%, black);
   --color-surface: var(--brand-bg);
