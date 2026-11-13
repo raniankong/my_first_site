@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Wave from "@/components/Wave";
-import { navItems } from "@/components/navItems";
+import { navGroups, siteTagline } from "@/components/navItems";
 
 const likes = [
   { icon: "🦴", title: "산책과 간식", desc: "신나는 산책 시간과 맛있는 간식만 있으면 언제나 행복해요." },
@@ -16,7 +16,7 @@ export default function Home() {
       <section className="relative bg-accent/15">
         <div className="max-w-6xl mx-auto px-6 pt-10 sm:pt-14 pb-24 sm:pb-28 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="order-2 md:order-1 text-center md:text-left">
-            <p className="text-caption font-bold text-primary mb-2">🐾 라이언 콩의 일상</p>
+            <p className="text-caption font-bold text-primary mb-2 break-keep">🐾 {siteTagline}</p>
             <h1 className="text-title font-extrabold tracking-tight break-keep">
               안녕? 난 <span className="text-primary">라이언 콩</span>이야
             </h1>
@@ -74,31 +74,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 메뉴 카드 */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-16 sm:pb-20">
-        <div className="text-center mb-8 sm:mb-10">
-          <h2 className="text-heading font-bold break-keep">콩이와 함께 둘러보기</h2>
-          <p className="text-caption text-ink/65 mt-1 break-keep">
-            반려동물과 함께하는 하루에 도움이 되는 것들을 모았어요.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="group rounded-3xl bg-white border border-ink/10 shadow-md shadow-ink/5 hover:shadow-xl hover:-translate-y-0.5 transition-all overflow-hidden"
-            >
-              <div className="h-24 bg-primary/10 flex items-center justify-center text-4xl rounded-b-[40%]">
-                <span aria-hidden="true">{item.icon}</span>
-              </div>
-              <div className="p-5 text-center">
-                <p className="text-body font-bold group-hover:text-primary">{item.label}</p>
-                <p className="text-caption text-ink/70 mt-1 break-keep">{item.desc}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
+      {/* 메뉴 카드: 3묶음 */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-16 sm:pb-20 space-y-14 sm:space-y-16">
+        {navGroups.map((group) => (
+          <div key={group.id} id={group.id} className="scroll-mt-20">
+            <div className="text-center mb-6 sm:mb-8">
+              <h2 className="text-heading font-bold break-keep">
+                <span aria-hidden="true">{group.icon}</span> {group.title}
+              </h2>
+              <p className="text-caption text-ink/65 mt-1 break-keep">{group.desc}</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto">
+              {group.items.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="group relative rounded-3xl bg-white border border-ink/10 shadow-md shadow-ink/5 hover:shadow-xl hover:-translate-y-0.5 transition-all overflow-hidden"
+                >
+                  {!item.ready && (
+                    <span className="absolute top-3 right-3 z-10 px-2.5 py-0.5 rounded-full bg-accent text-ink text-caption font-bold">
+                      곧 열려요
+                    </span>
+                  )}
+                  <div className="h-24 bg-primary/10 flex items-center justify-center text-4xl rounded-b-[40%]">
+                    <span aria-hidden="true">{item.icon}</span>
+                  </div>
+                  <div className="p-5 text-center">
+                    <p className="text-body font-bold group-hover:text-primary">{item.label}</p>
+                    <p className="text-caption text-ink/70 mt-1 break-keep">{item.desc}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        ))}
       </section>
 
       {/* 문의 안내 */}

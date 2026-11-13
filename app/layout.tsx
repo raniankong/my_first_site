@@ -21,10 +21,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://my-first-site-rust-two.vercel.app"),
   title: "안녕? 난 라이언 콩이야",
-  description: "[@ranian_kong]",
+  description: "콩이의 일상, 그리고 반려인을 위한 작은 도움",
   openGraph: {
     title: "안녕? 난 라이언 콩이야",
-    description: "[@ranian_kong]",
+    description: "콩이의 일상, 그리고 반려인을 위한 작은 도움",
     images: ["/my-dog.jpg"],
   },
   verification: {
